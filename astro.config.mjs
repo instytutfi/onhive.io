@@ -4,15 +4,15 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://louisescher.github.io',
-  base: '/starlight-ion-theme',
+  site: 'https://onhive.io',
   integrations: [starlight({
-    title: 'Ion Theme',
+    title: 'OnHive.io',
     logo: {
-      src: './src/assets/ion-logo.svg'
+      src: './src/assets/hive.svg'
     },
     social: {
-      github: 'https://github.com/louisescher/starlight-ion-theme'
+      email: 'mailto:info@onhive.io',
+      github: 'https://github.com/instytutfi'
     },
     sidebar: [{
       label: '[home] Home',

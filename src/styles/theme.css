@@ -1,30 +1,30 @@
 /* Specify colors. NOTE: YOU CAN CUSTOMIZE THESE HOWEVER YOU WANT! */
 :root {
   /* Font */
-  --sl-font: 'Space Grotesk', sans-serif;
+  --sl-font: "Space Grotesk", sans-serif;
   --sl-font-system-mono: "Space Mono", monospace;
 
   /* Dark mode colors */
-	--sl-color-accent-low: #3c0017;
-	--sl-color-accent: #bd0249;
-	--sl-color-accent-high: #ff78ac;
-	--sl-color-white: #ffffff;
-	--sl-color-gray-1: #c2c2c2;
-	--sl-color-gray-2: #a3a3a3;
-	--sl-color-gray-3: #838383;
-	--sl-color-gray-4: #3f3f3f;
-	--sl-color-gray-5: #262626;
-	--sl-color-gray-6: #121212;
-	--sl-color-black: #070707;
+  --sl-color-accent-low: #3c0000;
+  --sl-color-accent: #bd0202;
+  --sl-color-accent-high: #ff7878;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #c2c2c2;
+  --sl-color-gray-2: #a3a3a3;
+  --sl-color-gray-3: #838383;
+  --sl-color-gray-4: #3f3f3f;
+  --sl-color-gray-5: #262626;
+  --sl-color-gray-6: #121212;
+  --sl-color-black: #070707;
 
-	--sl-color-red-low: #3c0017;
-  --sl-color-red: #bd0249;
-	--sl-color-red-high: #ff78ac;
+  --sl-color-red-low: #3c0000;
+  --sl-color-red: #bd0202;
+  --sl-color-red-high: #ff7878;
 
-  --sl-color-purple-low: #33225b;
-  --sl-color-purple: #8a5cf5;
-  --sl-color-purple: #9975ee;
-  
+  --sl-color-purple-low: #22235b;
+  --sl-color-purple: #665cf5;
+  --sl-color-purple: #757fee;
+
   --sl-border: #262626;
   --pagefind-ui-border: #262626;
   --pagefind-ui-primary: var(--sl-color-accent);
@@ -71,7 +71,8 @@ header.header {
 }
 
 /* Add border-radius to card, change padding, add transition */
-.card, .sl-link-card {
+.card,
+.sl-link-card {
   border-radius: 12px !important;
   padding: 1.5rem !important;
   transition: all 0.1s ease;
@@ -151,7 +152,8 @@ nav[aria-labelledby="starlight__on-this-page--mobile"] a {
   color: var(--sl-color-gray-2);
 }
 
-a:hover, a[aria-current="true"] {
+a:hover,
+a[aria-current="true"] {
   color: var(--sl-color-white) !important;
 }
 
@@ -168,7 +170,7 @@ starlight-toc a {
 }
 
 /* Change tab color */
-a[role=tab][aria-selected=true] {
+a[role="tab"][aria-selected="true"] {
   border-color: var(--sl-color-accent) !important;
   font-weight: 400 !important;
   color: var(--sl-color-accent) !important;
@@ -181,8 +183,12 @@ starlight-file-tree.not-content {
 }
 
 /* Change font & remove ligatures for all code & the file tree */
-.expressive-code, pre, .expressive-code pre > code, code, starlight-file-tree {
-  font-family: 'Space Mono', monospace !important;
+.expressive-code,
+pre,
+.expressive-code pre > code,
+code,
+starlight-file-tree {
+  font-family: "Space Mono", monospace !important;
   font-variant-ligatures: none !important;
 }
 
@@ -270,7 +276,8 @@ figcaption.header span::after {
   transition: all 0.1s ease;
 }
 
-.pagefind-ui__result-title, .pagefind-ui__result-nested {
+.pagefind-ui__result-title,
+.pagefind-ui__result-nested {
   outline-color: var(--sl-color-accent) !important;
 }
 
@@ -333,5 +340,5 @@ main:has(.page-footer) {
 #_top {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
 }
