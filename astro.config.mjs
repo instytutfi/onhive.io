@@ -42,9 +42,6 @@ export default defineConfig({
       PageTitle: './src/components/PageTitle.astro'
     },
     customCss: [
-      '@fontsource-variable/space-grotesk/index.css',
-      '@fontsource/space-mono/400.css',
-      '@fontsource/space-mono/700.css',
       './src/styles/theme.css'
     ],
     expressiveCode: {
