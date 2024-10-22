@@ -112,6 +112,7 @@ header.header {
 /* Add padding to meta */
 .meta {
   padding-inline-end: var(--sl-content-pad-x);
+  padding: 1.5rem var(--sl-content-pad-x);
 }
 
 /* Adjust padding on pages with hero component */

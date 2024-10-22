@@ -1,5 +1,10 @@
 /* Adjust padding for stylistic purposes */
 .sl-markdown-content {
-  padding-bottom: 1rem !important;
-  margin-top: 0;
+  /*padding-bottom: 1rem !important;*/
+  /*margin-top: 0;*/
+  display: none;
+}
+
+.meta {
+  display: none;
 }
