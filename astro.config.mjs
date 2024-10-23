@@ -34,6 +34,12 @@ export default defineConfig({
           autogenerate: {
             directory: "tools"
           }
+        },
+        {
+          label: "[list] Community",
+          autogenerate: {
+            directory: "community"
+          }
         }
       ],
       components: {
