@@ -8,8 +8,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "OnHive.io",
+      favicon: "./src/assets/hcs.svg",
       logo: {
-        src: "./src/assets/hive.svg"
+        src: "./src/assets/hcs.svg"
       },
       social: {
         github: "https://github.com/instytutfi/onhive.io"
@@ -24,7 +25,7 @@ export default defineConfig({
           link: "/get-started/"
         },
         {
-          label: "[book] Hive Coding School",
+          label: "[hive] Hive Coding School",
           autogenerate: {
             directory: "school"
           }
