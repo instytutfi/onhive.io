@@ -81,6 +81,15 @@ const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
   {
     tag: "meta",
     attrs: { name: "twitter:card", content: "summary_large_image" }
+  },
+  {
+    tag: "script",
+    attrs: {
+      defer: true,
+      src: "https://umami.instytut.fi/script.js",
+      "data-website-id": "c487e6d3-50e6-4fca-9de2-02d8886a0ced",
+      "data-domains": "onhive.io"
+    }
   }
 ];
 
