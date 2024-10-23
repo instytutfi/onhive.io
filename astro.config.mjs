@@ -8,7 +8,6 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "OnHive.io",
-      favicon: "./src/assets/hcs.svg",
       logo: {
         src: "./src/assets/hcs.svg"
       },
