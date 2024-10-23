@@ -29,6 +29,12 @@ export default defineConfig({
           autogenerate: {
             directory: "school"
           }
+        },
+        {
+          label: "[box] Dev Tools",
+          autogenerate: {
+            directory: "tools"
+          }
         }
       ],
       components: {
