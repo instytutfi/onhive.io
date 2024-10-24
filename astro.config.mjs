@@ -56,10 +56,6 @@ export default defineConfig({
           autogenerate: {
             directory: "community"
           }
-        },
-        {
-          label: "leadingNavLinks",
-          items: [{ label: "Blog", link: "/blog" }]
         }
       ],
       components: {
