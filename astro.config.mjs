@@ -5,6 +5,18 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   site: "https://onhive.io",
+  experimental: {
+    contentLayer: true
+  },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler"
+        }
+      }
+    }
+  },
   integrations: [
     starlight({
       title: "OnHive.io",
@@ -24,6 +36,10 @@ export default defineConfig({
           link: "/get-started/"
         },
         {
+          label: "[list] Blog",
+          link: "/blog/"
+        },
+        {
           label: "[hive] Hive Coding School",
           autogenerate: {
             directory: "school"
@@ -40,6 +56,10 @@ export default defineConfig({
           autogenerate: {
             directory: "community"
           }
+        },
+        {
+          label: "leadingNavLinks",
+          items: [{ label: "Blog", link: "/blog" }]
         }
       ],
       components: {

@@ -1,0 +1,104 @@
+---
+import { type Post } from "@/loaders/hive-loader";
+
+export type Props = {
+  data: Post;
+};
+
+const { data } = Astro.props;
+const isCrossPost = data.json_metadata.tags?.includes("cross-post");
+---
+
+<a
+  href={`https://ecency.com${data.url}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="blog-post"
+>
+  <img
+    class="blog-post-image"
+    src={data.json_metadata.image ? data.json_metadata.image[0] : ""}
+    alt={data.title}
+  />
+  <div class="blog-post-data">
+    <span class="blog-post-meta">
+      @{data.author} on {new Date(data.created).toLocaleDateString("en-US")}
+      {isCrossPost && <span>cross-posted to {data.community_title}</span>}
+    </span>
+    <h2 class="blog-post-title">
+      {data.title}
+    </h2>
+    <div class="blog-post-content">
+      <p>{data.json_metadata.description}</p>
+    </div>
+  </div>
+</a>
+
+<style lang="scss">
+  .blog-post {
+    display: flex;
+    width: 100% !important;
+    flex-direction: column;
+    border: 1px solid #282828;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.1s !important;
+
+    + .blog-post {
+      margin-top: 16px;
+    }
+
+    &:hover {
+      border-color: #888;
+      background: #181818;
+    }
+
+    .blog-post-image {
+      width: 100%;
+      height: auto;
+      max-height: 20rem;
+      object-fit: cover;
+    }
+
+    .blog-post-data {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+    }
+
+    .blog-post-meta {
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: #888;
+    }
+
+    .blog-post-title {
+      font-size: 1.25rem;
+      margin: 8px 0;
+    }
+
+    .blog-post-content {
+      font-size: 0.875rem;
+      margin-bottom: 8px;
+      color: #fff;
+      line-height: 1.5;
+    }
+  }
+
+  @media screen and (min-width: 869px) {
+    .blog-post {
+      flex-direction: row;
+      align-items: stretch;
+
+      .blog-post-image {
+        flex: 0 0 33.3333%;
+        max-height: none;
+      }
+
+      .blog-post-data {
+        padding: 16px 24px;
+      }
+    }
+  }
+</style>

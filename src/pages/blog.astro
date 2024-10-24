@@ -1,0 +1,11 @@
+---
+import { getCollection } from "astro:content";
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import BlogPost from "@/components/BlogPost.astro";
+
+const posts = await getCollection("blog");
+---
+
+<StarlightPage frontmatter={{ title: "Blog", tableOfContents: false }}>
+  {posts.map((post) => <BlogPost data={post.data} />)}
+</StarlightPage>
