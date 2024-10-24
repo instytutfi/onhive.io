@@ -14,6 +14,7 @@ export const postSchema = z.object({
   author: z.string(),
   permlink: z.string(),
   category: z.string(),
+  community_title: z.string().optional(),
   title: z.string(),
   body: z.string(),
   json_metadata: z.object({
@@ -50,7 +51,7 @@ export function hiveTagLoader(): Loader {
 export function hiveBlogLoader(params: BlogLoaderParams): Loader {
   return {
     name: "hive-blog-loader",
-    load: async function (this: Loader, { store, meta, logger }) {
+    load: async function (this: Loader, { store, logger }) {
       logger.debug(`Fetching blog posts [params: ${JSON.stringify(params)}]`);
 
       const response = await fetch(HIVE_API, {
