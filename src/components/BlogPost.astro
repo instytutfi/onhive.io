@@ -1,35 +1,40 @@
 ---
-import { type Post } from "@/loaders/hive-loader";
+import { Post } from "@onhive.io/astro-loader";
 
 export type Props = {
-  data: Post;
+  post: {
+    id: string;
+    data: Post;
+  };
 };
 
-const { data } = Astro.props;
-const isCrossPost = data.json_metadata.tags?.includes("cross-post");
+const { post }: Props = Astro.props;
 ---
 
 <a
-  href={`https://ecency.com${data.url}`}
+  href={`https://ecency.com${post.data.canonical}`}
   target="_blank"
   rel="noopener noreferrer"
   class="blog-post"
 >
   <img
     class="blog-post-image"
-    src={data.json_metadata.image ? data.json_metadata.image[0] : ""}
-    alt={data.title}
+    src={post.data.image ?? ""}
+    alt={post.data.title}
   />
   <div class="blog-post-data">
     <span class="blog-post-meta">
-      @{data.author} on {new Date(data.created).toLocaleDateString("en-US")}
-      {isCrossPost && <span>cross-posted to {data.community_title}</span>}
+      <span>@{post.data.author}</span>
+      <span>
+        on {post.data.created.toLocaleDateString("en-US")}
+      </span>
+      {post.data.community && <span>in {post.data.community.name}</span>}
     </span>
     <h2 class="blog-post-title">
-      {data.title}
+      {post.data.title}
     </h2>
     <div class="blog-post-content">
-      <p>{data.json_metadata.description}</p>
+      <p>{post.data.description}</p>
     </div>
   </div>
 </a>

@@ -1,17 +1,12 @@
 import { defineCollection } from "astro:content";
 import { docsSchema } from "@astrojs/starlight/schema";
 
-import { hiveBlogLoader, postSchema } from "@/loaders/hive-loader.ts";
+import { hiveBlogLoader } from "@onhive.io/astro-loader";
 
 export const collections = {
   docs: defineCollection({ schema: docsSchema() }),
   blog: defineCollection({
     type: "content_layer",
-    loader: hiveBlogLoader({
-      author: "hive.coding",
-      limit: 10,
-      ignoreCrossPosts: true
-    }),
-    schema: postSchema
+    loader: hiveBlogLoader("hive.coding")
   })
 };

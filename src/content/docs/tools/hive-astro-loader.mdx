@@ -46,10 +46,47 @@ check out the links below:
 
 ## Hive Astro Loader
 
+Astro Content Layer loader for the Hive blockchain
+
 ### Installation
+
+```bash
+npm install @onhive.io/astro-loader
+```
+
+or use our favorite package manager.
 
 ### Usage
 
-### Configuration
+**Hive Blog Loader**
 
-### Contributing
+In your Astro project, edit the `/src/content/config.ts`:
+
+```ts
+import { defineCollection } from "astro:content";
+import { hiveBlogLoader } from "@onhive.io/astro-loader";
+
+export const collections = {
+  blog: defineCollection({
+    type: "content_layer",
+    loader: hiveBlogLoader("hive.coding") // Selected username
+  })
+};
+```
+
+For now only `hiveBlogLoader` is available, more coming soon!
+
+### Learn more
+
+{" "}
+
+<LinkCard
+  title="instytutfi/hive-astro-loader — github.com"
+  description="See the source code for this project on GitHub"
+  href="https://github.com/instytutfi/hive-astro-loader"
+/>
+<LinkCard
+  title="@onhive.io/astro-loader — npmjs.com"
+  description="View this project on npm"
+  href="https://www.npmjs.com/package/@onhive.io/astro-loader"
+/>

@@ -7,5 +7,5 @@ const posts = await getCollection("blog");
 ---
 
 <StarlightPage frontmatter={{ title: "Blog", tableOfContents: false }}>
-  {posts.map((post) => <BlogPost data={post.data} />)}
+  {posts.map((post) => <BlogPost post={post} />)}
 </StarlightPage>
