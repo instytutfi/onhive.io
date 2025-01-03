@@ -1,10 +1,6 @@
 ---
 title: Hive Astro Loader
 description: Custom Astro Loader for the Content Layer API that allows to fetch content from Hive blockchain.
-banner:
-  content: |
-    Hive Astro Loader has just been released!
-    <a href="https://github.com/instytutfi/hive-astro-loader">Check out on Github</a>
 ---
 
 import { CardGrid, LinkCard } from "@astrojs/starlight/components";
@@ -45,7 +41,7 @@ check out the links below:
   />
 </CardGrid>
 
-## Hive Astro Loader
+## Using the loader
 
 Astro Content Layer loader for the Hive blockchain
 
@@ -65,29 +61,35 @@ In your Astro project, edit the `/src/content/config.ts`:
 
 ```ts
 import { defineCollection } from "astro:content";
-import { hiveBlogLoader } from "@onhive.io/astro-loader";
+import { hiveBlogLoader, hiveAccountsLoader } from "@onhive.io/astro-loader";
 
 export const collections = {
   blog: defineCollection({
     type: "content_layer",
     loader: hiveBlogLoader("hive.coding") // Selected username
+  }),
+  accounts: defineCollection({
+    type: "content_layer",
+    loader: hiveAccountsLoader("hive.coding") // or ["acc1", "acc2"] for multiple accounts
   })
 };
 ```
 
-For now only `hiveBlogLoader` is available, more coming soon!
+To learn about the full functionality of this package, please [head out to our GitHub page](https://github.com/instytutfi/hive-astro-loader).
 
 ### Learn more
 
 {" "}
 
-<LinkCard
-  title="instytutfi/hive-astro-loader — github.com"
-  description="See the source code for this project on GitHub"
-  href="https://github.com/instytutfi/hive-astro-loader"
-/>
-<LinkCard
-  title="@onhive.io/astro-loader — npmjs.com"
-  description="View this project on npm"
-  href="https://www.npmjs.com/package/@onhive.io/astro-loader"
-/>
+<CardGrid>
+  <LinkCard
+    title="instytutfi/hive-astro-loader — github.com"
+    description="See the source code for this project on GitHub"
+    href="https://github.com/instytutfi/hive-astro-loader"
+  />
+  <LinkCard
+    title="@onhive.io/astro-loader — npmjs.com"
+    description="View this project on npm"
+    href="https://www.npmjs.com/package/@onhive.io/astro-loader"
+  />
+</CardGrid>
