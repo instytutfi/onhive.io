@@ -1,7 +1,7 @@
 ---
 import Icon from "./user-components/Icon.astro";
 
-const { dir, labels, pagination } = Astro.props;
+const { dir, pagination } = Astro.locals.starlightRoute;
 const { prev, next } = pagination;
 const isRtl = dir === "rtl";
 ---
@@ -12,7 +12,7 @@ const isRtl = dir === "rtl";
       <a class="pagination" href={prev.href} rel="prev">
         <Icon name={isRtl ? "right-arrow" : "left-arrow"} size="1.5rem" />
         <span>
-          {labels["page.previousLink"]}
+          {Astro.locals.t("page.previousLink")}
           <br />
           <span class="link-title">{prev.label}</span>
         </span>
@@ -24,7 +24,7 @@ const isRtl = dir === "rtl";
       <a class="pagination" href={next.href} rel="next">
         <Icon name={isRtl ? "left-arrow" : "right-arrow"} size="1.5rem" />
         <span>
-          {labels["page.nextLink"]}
+          {Astro.locals.t("page.nextLink")}
           <br />
           <span class="link-title">{next.label}</span>
         </span>

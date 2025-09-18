@@ -5,9 +5,6 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   site: "https://onhive.io",
-  experimental: {
-    contentLayer: true
-  },
   vite: {
     css: {
       preprocessorOptions: {
@@ -23,9 +20,13 @@ export default defineConfig({
       logo: {
         src: "./src/assets/hcs.svg"
       },
-      social: {
-        github: "https://github.com/instytutfi/onhive.io"
-      },
+      social: [
+        {
+          icon: "seti:github",
+          label: "Github",
+          href: "https://github.com/instytutfi/onhive.io"
+        }
+      ],
       sidebar: [
         {
           label: "[home] Home",
