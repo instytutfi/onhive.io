@@ -12,7 +12,7 @@ const { post }: Props = Astro.props;
 ---
 
 <a
-  href={`https://ecency.com${post.data.canonical}`}
+  href={`https://peakd.com${post.data.canonical}`}
   target="_blank"
   rel="noopener noreferrer"
   class="blog-post"
@@ -42,6 +42,7 @@ const { post }: Props = Astro.props;
 <style lang="scss">
   .blog-post {
     display: flex;
+    flex-wrap: wrap;
     width: 100% !important;
     flex-direction: column;
     border: 1px solid #282828;
@@ -62,7 +63,7 @@ const { post }: Props = Astro.props;
     .blog-post-image {
       width: 100%;
       height: auto;
-      max-height: 20rem;
+      max-height: 50vh;
       object-fit: cover;
     }
 
@@ -94,14 +95,22 @@ const { post }: Props = Astro.props;
   @media screen and (min-width: 869px) {
     .blog-post {
       flex-direction: row;
+      flex-wrap: nowrap;
       align-items: stretch;
 
       .blog-post-image {
-        flex: 0 0 33.3333%;
+        flex-shrink: 0;
+        flex-grow: 0;
+        width: calc(100% / 3);
         max-height: none;
+        object-fit: cover;
       }
 
       .blog-post-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
         padding: 16px 24px;
       }
     }
