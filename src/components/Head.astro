@@ -124,17 +124,7 @@ if (Astro.site) {
   });
 }
 
-// Link to Twitter account if set in Starlight config.
-if (config.social?.twitter) {
-  headDefaults.push({
-    tag: "meta",
-    attrs: {
-      name: "twitter:site",
-      content: new URL(config.social.twitter.url).pathname
-    }
-  });
-}
-
+// @ts-expect-error Could use some cleaning up of this TS mess
 const head = createHead(headDefaults, config.head, data.head);
 ---
 
